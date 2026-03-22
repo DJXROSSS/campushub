@@ -1,9 +1,9 @@
 "use client"
-import Image from "next/image"
 import { signIn } from "next-auth/react"
 import Link from "next/link"
 import { useState } from "react"
 import { Spinner } from "@/components/ui/spinner"
+import { Logo } from "@/components/ui/logo"
 
 export default function SignInPage() {
   const [signinLoading, setSigninLoading] = useState(false)
@@ -12,7 +12,7 @@ export default function SignInPage() {
   const handleSignIn = async () => {
     setSigninLoading(true)
     try {
-      await signIn("google", { callbackUrl: "/" })
+      await signIn("google", { callbackUrl: "/dashboard" })
     } catch (error) {
       console.error("Failed to sign in:", error)
       setSigninLoading(false)
@@ -36,13 +36,7 @@ export default function SignInPage() {
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
               <div className="mb-6 flex justify-center">
-                <Image
-                  src="/logo.png"
-                  width={500}
-                  height={500}
-                  alt="logo"
-                  className="h-12 w-12"
-                />
+                <Logo />
               </div>
               <h2 className="bg-[radial-gradient(61.17%_178.53%_at_38.83%_-13.54%,#3B3B3B_0%,#888787_12.61%,#FFFFFF_50%,#888787_80%,#3B3B3B_100%)] bg-clip-text text-4xl font-bold tracking-tight text-transparent">
                 Welcome to CampusHub
