@@ -1,7 +1,7 @@
 "use client"
-import { signIn } from "next-auth/react"
 import Link from "next/link"
 import { useState } from "react"
+import { signIn } from "next-auth/react"
 import { Spinner } from "@/components/ui/spinner"
 import { Logo } from "@/components/ui/logo"
 
