@@ -2,10 +2,12 @@
 
 import React from "react"
 import Navbar from "./navbar"
+import Link from "next/link"
 import dynamic from 'next/dynamic'
+import HomePage from "@/app/(primary)/home/page"
 
 const SplineBackground = dynamic(
-  () => import('../SplineBackground'),
+  () => import('../spline/SplineBackground'),
   { ssr: false }
 )
 
@@ -15,10 +17,10 @@ const LandingPage = () => {
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <SplineBackground />
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col h-full">
         <Navbar />
+        <HomePage />
       </div>
-
     </div>
   )
 }
