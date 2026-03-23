@@ -1,8 +1,15 @@
+"use client"
 import { Geist, Geist_Mono } from "next/font/google"
+import dynamic from "next/dynamic"
 
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import Provider from "@/provider/provider"
+
+const SplineBackground = dynamic(
+  () => import('@/components/spline/SplineBackground'),
+  { ssr: false }
+)
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -28,7 +35,12 @@ export default function RootLayout({
       )}
     >
       <body>
-        <Provider>{children}</Provider>
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+          <SplineBackground />
+        </div>
+        <Provider>
+          <div className="relative z-10">{children}</div>
+        </Provider>
       </body>
     </html>
   )

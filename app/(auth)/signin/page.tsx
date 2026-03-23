@@ -19,9 +19,9 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
+    <div className="relative min-h-screen">
       <div className="flex min-h-screen">
-        <div className="flex w-full items-center justify-center bg-white p-8 dark:bg-black">
+        <div className="flex w-full items-center justify-center bg-white/80 p-8 dark:bg-black/80 backdrop-blur-sm">
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
               <div className="mb-6 flex justify-center">

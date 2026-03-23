@@ -8,12 +8,12 @@ const HomePage = () => {
             
             <div className="flex flex-row items-center gap-2">
                 <MyIcon className="h-20 w-20 text-black dark:text-white" />
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-tight">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black tracking-tight leading-tight dark:text-white">
                     CampusHub
                 </h1>
             </div>
 
-            <p className="mt-4 max-w-lg text-base sm:text-lg md:text-xl italic text-neutral-300 leading-relaxed">
+            <p className="mt-4 max-w-lg text-base sm:text-lg md:text-xl italic text-neutral-500 leading-relaxed dark:text-neutral-50">
                 Your and your College&apos;s best companion or somthing like that IDK
             </p>
 

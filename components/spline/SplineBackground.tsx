@@ -6,7 +6,7 @@ export default function SplineBackground() {
   return (
     <Spline
       className="w-full h-full"
-      scene="https://prod.spline.design/7xhseSs9TzZQol9q/scene.splinecode"
+      scene="https://prod.spline.design/7xhseSs9TzZQol9q/scene.splinecode?v=5"
     />
   )
 }
