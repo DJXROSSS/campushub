@@ -2,7 +2,6 @@
 
 import React from "react"
 import Navbar from "./navbar"
-import Link from "next/link"
 import dynamic from 'next/dynamic'
 import HomePage from "@/app/(primary)/home/page"
 

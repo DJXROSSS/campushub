@@ -1,9 +1,5 @@
 import Link from "next/link"
-import { FaBookOpen } from "react-icons/fa"
-
-const MyIcon = ({ className = "" }: { className?: string }) => (
-  <FaBookOpen className={className} />
-)
+import { MyIcon } from "./icon"
 
 export const Logo = () => {
   return (

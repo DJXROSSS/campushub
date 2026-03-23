@@ -1,11 +1,6 @@
-import Link from "next/link"
-import { FaBookOpen } from "react-icons/fa"
 import SignInButton from "@/components/user/SignInButton"
 import LoginButton from "@/components/user/LogInButton"
-
-const MyIcon = ({ className = "" }: { className?: string }) => (
-  <FaBookOpen className={className} />
-)
+import { MyIcon } from "@/components/ui/icon"
 
 const HomePage = () => {
     return (
