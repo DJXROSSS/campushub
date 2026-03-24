@@ -1,21 +1,36 @@
 "use client"
 import Link from "next/link"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { signIn } from "next-auth/react"
 import { Spinner } from "@/components/ui/spinner"
 import { Logo } from "@/components/ui/logo"
 
 export default function SignInPage() {
   const [signinLoading, setSigninLoading] = useState(false)
+  const router = useRouter()
 
   const handleSignIn = async () => {
     setSigninLoading(true)
     try {
-      await signIn("google", { callbackUrl: "/dashboard" })
+      await signIn("google", { callbackUrl: "/onboarding" })
     } catch (error) {
       console.error("Failed to sign in:", error)
       setSigninLoading(false)
     }
+  }
+
+  const handleSkipLogin = () => {
+    localStorage.setItem("skipLogin", "true")
+    localStorage.setItem(
+      "campushub_user",
+      JSON.stringify({
+        name: "Demo User",
+        email: "demo@college.edu",
+        image: null,
+      })
+    )
+    router.push("/onboarding")
   }
 
   return (
@@ -66,6 +81,24 @@ export default function SignInPage() {
                     Sign in with Google
                   </>
                 )}
+              </button>
+
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t border-neutral-200 dark:border-neutral-800" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-white px-2 text-neutral-500 dark:bg-black dark:text-neutral-400">
+                    or
+                  </span>
+                </div>
+              </div>
+
+              <button
+                onClick={handleSkipLogin}
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-neutral-300 px-8 text-sm font-medium text-neutral-600 transition-all duration-200 hover:border-neutral-400 hover:bg-neutral-50 hover:text-black dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-900/50 dark:hover:text-white"
+              >
+                Skip Login →
               </button>
             </div>
 
